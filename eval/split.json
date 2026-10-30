@@ -1,0 +1,5 @@
+{
+  "calibracao": ["g01", "g02", "g03", "g05", "g06", "g09", "g11", "g12", "g15", "g18", "g21", "t01", "t02"],
+  "teste": ["g04", "g07", "g08", "g10", "g13", "g14", "g16", "g17", "g19", "g20", "g22", "t03", "t04", "t05"],
+  "nota": "Fixed split, stratified by area + trap. Prompt/threshold tuning looks only at calibracao."
+}
