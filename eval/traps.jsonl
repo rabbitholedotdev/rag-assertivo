@@ -1,0 +1,5 @@
+{"id": "t01", "tipo": "armadilha", "pergunta": "Qual a pena do homicídio simples no Código Penal brasileiro?", "expected_ids": [], "nota": "CP não está no corpus"}
+{"id": "t02", "tipo": "armadilha", "pergunta": "Quantos módulos tem o curso de copywriting da área de membros?", "expected_ids": [], "nota": "nenhum curso pago neste repositório"}
+{"id": "t03", "tipo": "armadilha", "pergunta": "Qual o telefone da central de atendimento da autoridade nacional de proteção de dados?", "expected_ids": [], "nota": "não há contato telefônico no corpus"}
+{"id": "t04", "tipo": "armadilha", "pergunta": "Em que artigo a CLT define o adicional de insalubridade?", "expected_ids": [], "nota": "CLT não está no corpus"}
+{"id": "t05", "tipo": "armadilha", "pergunta": "Qual o valor da taxa SELIC hoje?", "expected_ids": [], "nota": "dado de mercado, não legislação vendored"}

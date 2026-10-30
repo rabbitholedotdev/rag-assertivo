@@ -1,0 +1,60 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.16.2
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  rag:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      COLLECTION_NAME: publico_br
+      EMBED_MODEL: intfloat/multilingual-e5-large
+      RERANK_MODEL: jinaai/jina-reranker-v2-base-multilingual
+      RAG_RERANK: "1"
+      RAG_POOLS_SEPARADOS: "0"
+      RAG_PENALIDADE_SINTETICO: "0.0"
+      MCP_TRANSPORT: http
+      MCP_HOST: 0.0.0.0
+      MCP_PORT: "8000"
+      MCP_HTTP_PATH: /mcp
+      HF_HOME: /models
+      FASTEMBED_CACHE_DIR: /models
+      HF_HUB_DISABLE_SHARED_BLOBS: "1"
+    volumes:
+      - models:/models
+      - ./corpus:/app/corpus:ro
+
+  ingest:
+    build: .
+    profiles: ["ingest"]
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      COLLECTION_NAME: publico_br
+      EMBED_MODEL: intfloat/multilingual-e5-large
+      HF_HOME: /models
+      FASTEMBED_CACHE_DIR: /models
+      HF_HUB_DISABLE_SHARED_BLOBS: "1"
+    volumes:
+      - models:/models
+      - ./corpus:/app/corpus:ro
+    command: ["python", "-m", "ingest.ingest"]
+
+volumes:
+  qdrant_storage:
+  models:

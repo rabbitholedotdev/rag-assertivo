@@ -1,0 +1,41 @@
+{
+  "license": "Official Brazilian legislative texts. Public. Vendored excerpts for reproducible ingest.",
+  "documents": [
+    {
+      "doc_id": "cf88-direitos",
+      "title": "Constituição Federal de 1988 — direitos e deveres (excertos)",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+      "area": "constituicao"
+    },
+    {
+      "doc_id": "cf88-admin",
+      "title": "Constituição Federal de 1988 — administração, saúde, educação, ambiente (excertos)",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+      "area": "constituicao"
+    },
+    {
+      "doc_id": "lgpd",
+      "title": "Lei 13.709/2018 — Lei Geral de Proteção de Dados (excertos)",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm",
+      "area": "dados"
+    },
+    {
+      "doc_id": "cdc",
+      "title": "Lei 8.078/1990 — Código de Defesa do Consumidor (excertos)",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm",
+      "area": "consumo"
+    },
+    {
+      "doc_id": "lai",
+      "title": "Lei 12.527/2011 — Lei de Acesso à Informação (excertos)",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm",
+      "area": "transparencia"
+    },
+    {
+      "doc_id": "marco-civil",
+      "title": "Lei 12.965/2014 — Marco Civil da Internet (excertos)",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm",
+      "area": "internet"
+    }
+  ]
+}
